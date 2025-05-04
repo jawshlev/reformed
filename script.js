@@ -181,7 +181,7 @@ function draw() {
   
   // Optionally display the name and coords of each graphic for visual feedback
   if (showText) {
-    fill(255);
+    fill(0);
     noStroke();
     for (let g of graphics) {
       textSize(12);
@@ -313,24 +313,27 @@ function addFeature(category) {
 
 // Mouse interactions
 function mousePressed() {
-  let draggingWindow = false;
-
-  // Check if clicking on any graphic first
-  for (let g of graphics) {
-    if (g.contains(mouseX, mouseY)) {
-      g.startDrag(mouseX, mouseY);
-      draggingWindow = true;
-      break; // Prioritize dragging over sidebar clicks
+    // only handle mouse press if clicking on the canvas element
+  
+    let draggingWindow = false;
+  
+    // Check if clicking on any graphic first
+    for (let g of graphics) {
+      if (g.contains(mouseX, mouseY)) {
+        g.startDrag(mouseX, mouseY);
+        draggingWindow = true;
+        break;
+      }
     }
-  }
-
-  // If not dragging a graphic, check for sidebar button clicks
-  if (!draggingWindow && mouseX > width - 160) {
-    if (mouseY >= 50 && mouseY < 80) addFeature("defaultEyes");
-    if (mouseY >= 100 && mouseY < 130) addFeature("defaultNose");
-    if (mouseY >= 150 && mouseY < 180) addFeature("defaultMouth");
-  }
+  
+    // Sidebar feature buttons (drawn in p5, not HTML)
+    if (!draggingWindow && mouseX > width - 160) {
+      if (mouseY >= 50 && mouseY < 80) addFeature("defaultEyes");
+      if (mouseY >= 100 && mouseY < 130) addFeature("defaultNose");
+      if (mouseY >= 150 && mouseY < 180) addFeature("defaultMouth");
+    }
 }
+  
 
 function mouseDragged() {
   for (let g of graphics) {

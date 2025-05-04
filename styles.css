@@ -207,3 +207,17 @@
       grid-template-columns: 1fr;
     }
   }
+/* Side-by-side layout for info section */
+.side-by-side {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.info-box {
+  flex: 1 1 30%;
+  background-color: var(--secondary);
+  padding: 1rem;
+  border-radius: var(--radius);
+}
