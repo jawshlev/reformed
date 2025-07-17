@@ -1,6 +1,6 @@
 # Refor(me)d
 
-**Description: **An ensemble of windows that work coherently to produce a portrait of the current user. The user can drag and drop themselves in their own image.
+An ensemble of windows that work coherently to produce a portrait of the current user. The user can drag and drop themselves in their own image.
 
 ![alt_text](images/image8.png "image_tooltip")
 
