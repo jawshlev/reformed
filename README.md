@@ -5,7 +5,7 @@
 ![alt_text](images/image8.png "image_tooltip")
 
 ## Live Demo:
-[https://jawshlev.github.io/reformed/]
+https://jawshlev.github.io/reformed/
 
 ## Origin:
 
